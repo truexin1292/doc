@@ -11,13 +11,16 @@
     <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
 </head>
 <body>
-<div id="app"></div>
+<div id="app">加载中</div>
 <script>
     window.$docsify = {
         name: 'truexin',
         themeColor: '#19BE6B',
-        repo: 'doc',
-        loadSidebar: true
+        repo: 'truexin1292/doc',
+        loadSidebar: true,
+        alias: {
+            '/.*/_sidebar.md': '/_sidebar.md'
+        }
     }
 </script>
 <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
@@ -28,7 +31,7 @@
     const gitalk = new Gitalk({
         clientID: 'a679022e17d72c62f89e',
         clientSecret: '3317f40f9d1bec07269e025eac4b1b01c867528e',
-        repo: 'truexin1292/doc',
+        repo: 'https://truexin1292.github.io/doc',
         owner: 'truexin',
         admin: ['truexin'],
         // facebook-like distraction free mode
