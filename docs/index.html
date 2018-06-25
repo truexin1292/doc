@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
 </head>
 <body>
-<div id="app">加载中</div>
+<div id="app">加载中...</div>
 <script>
     //1. https://truexin1292.github.io/doc/#/    线上
     //2. http://localhost:3000/#/                本地
 
     window.$docsify = {
         name: 'truexin1292',
-        themeColor: '#19BE6B',
+        // themeColor: '#19BE6B',
         repo: 'truexin1292/doc',
         loadSidebar: true,
         loadNavbar: true,
@@ -29,7 +29,21 @@
             '/.*/_sidebar.md': '/_sidebar.md',
             '/.*/_navbar.md': '/_navbar.md',
             '/.*/_coverpage.md': '/_coverpage.md',
-
+        },
+        // 完整配置参数
+        search: {
+            maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+            paths: "auto", // or 'auto'
+            // 支持本地化
+            placeholder: {
+                '/': '搜索'
+            },
+            // 支持本地化
+            noData: {
+                '/': '找不到结果',
+            },
+            // 搜索标题的最大程级, 1 - 6
+            depth: 2
         }
     }
 </script>
@@ -37,16 +51,17 @@
 <script src="//unpkg.com/docsify-copy-code"></script>
 <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
 <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="config.js"></script>
 <script>
     const gitalk = new Gitalk({
-        clientID: 'a679022e17d72c62f89e',
-        clientSecret: '3317f40f9d1bec07269e025eac4b1b01c867528e',
+        clientID: Config.clientID,
+        clientSecret: Config.clientSecret,
         repo: 'doc',
         owner: 'truexin1292',
         admin: ['truexin1292'],
-        // facebook-like distraction free mode
         distractionFreeMode: true
     })
 </script>
+<script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>

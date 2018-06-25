@@ -1,6 +1,6 @@
 ![logo](https://docsify.js.org/_media/icon.svg)
 
-# docsify
+# docsify文档
 
 > A magical documentation site generator.
 
